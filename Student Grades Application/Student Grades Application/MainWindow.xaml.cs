@@ -14,7 +14,9 @@ namespace Student_Grades_Application
     {
         string Filename = "";
         string filePath = "";
+        string folderPath = "";
         Encryption enc = new Encryption();
+        ClassValidation val = new ClassValidation();   
 
         public MainWindow()
         {
@@ -29,11 +31,11 @@ namespace Student_Grades_Application
                 // Creating a new txt file using dedicated textbox
                 if (txtFileName.Text != null | txtFileName.Text != "")
                 {
-                    Encryption enc = new Encryption();
+                    Filename = txtFileName.Text;
                     //Filename = enc.EncryptString(txtFileName.Text, "MySecretKey12345");
                     Filename = $"{Filename}.txt";
 
-                    string folderPath = @"C:\StudentGradesApp\Files"; // Replace with your desired folder path
+                     folderPath = @"C:\StudentGradesApp\Files"; // Replace with your desired folder path
                     Directory.CreateDirectory(folderPath);
 
 
@@ -46,55 +48,75 @@ namespace Student_Grades_Application
                     //  File.Create(Filename).Close();
                     //File.Encrypt(Filename);
 
-                    //Notify file created and clear
                     AddToCombo();
+                    //Notify file created and clear
                     MessageBox.Show($"{txtFileName.Text} created successfully :)");
                     txtFileName.Text = "";
                 }
             }
             catch (Exception exc)
             {
-
                 MessageBox.Show("Error: " + exc.Message);
             }
         }
 
 
+        
+        private void AddToFile_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Add data from textboxes to grades.txt
+                string studentNumber = StudentNumberTextBox.Text;
+                string studentName = StudentNameTextBox.Text;
+                string surname = SurnameTextBox.Text;
+                string subject = SubjectTextBox.Text;
+                string indivAssignGrade = IndivAssignGradeTextBox.Text;
+                string groupAssignGrade = GroupAssignGradeTextBox.Text;
+                string testGrade = TestGradeTextBox.Text;
+                if (combFileList.SelectedIndex != 0)
+                {
+                    if (val.AddCheck(combFileList.SelectedItem.ToString(), subject, studentNumber, studentName,
+                       surname, indivAssignGrade, groupAssignGrade, testGrade) == false)
+                    {
+                        //File.Decrypt(Filename);
+                        string selectedFile = @"C:\StudentGradesApp\Files\" + combFileList.SelectedItem.ToString();
+                        //Filename = enc.DecryptString(Filename,"MySecretKey12345");
+
+                        
+
+                        string dataToWrite = $"{studentNumber},{studentName},{surname},{subject},{indivAssignGrade},{groupAssignGrade},{testGrade}";
+                        File.AppendAllText(folderPath + selectedFile, dataToWrite + Environment.NewLine);
+
+                        // Clear textboxes after adding data
+                        ClearTextBoxes();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Error: You cant add an empty field to {combFileList.SelectedItem.ToString()}");
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("Error: Please select a file to add to."); 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: "+ex.Message);
+            }
+        }
         private void Display_Click(object sender, RoutedEventArgs e)
         {
+            string selectedFile = combFileList.SelectedItem.ToString();
             // Read the contents of grades.txt using LINQ and display them in the DataGridView
-            List<string[]> data = File.ReadAllLines(filePath)
+            List<string[]> data = File.ReadAllLines(@"C:\StudentGradesApp\Files\"+ selectedFile)
                 .Select(line => line.Split(','))
                 .ToList();
 
             // Bind the data to the DataGridView
             DataGridView.ItemsSource = data;
         }
-        private void AddToFile_Click(object sender, RoutedEventArgs e)
-        {
-            Encryption enc = new Encryption();
-            File.Decrypt(Filename);
-
-
-            //Filename = enc.DecryptString(Filename,"MySecretKey12345");
-
-            // Add data from textboxes to grades.txt
-            string studentNumber = StudentNumberTextBox.Text;
-            string studentName = StudentNameTextBox.Text;
-            string surname = SurnameTextBox.Text;
-            string subject = SubjectTextBox.Text;
-            string indivAssignGrade = IndivAssignGradeTextBox.Text;
-            string groupAssignGrade = GroupAssignGradeTextBox.Text;
-            string testGrade = TestGradeTextBox.Text;
-
-            string dataToWrite = $"{studentNumber},{studentName},{surname},{subject},{indivAssignGrade},{groupAssignGrade},{testGrade}";
-
-            File.AppendAllText(Filename, dataToWrite + Environment.NewLine);
-
-            // Clear textboxes after adding data
-            ClearTextBoxes();
-        }
-
         private void ClearTextBoxes()
         {
             StudentNumberTextBox.Clear();
@@ -112,7 +134,7 @@ namespace Student_Grades_Application
             Directory.CreateDirectory(listPath);
 
 
-            filePath = Path.Combine(listPath, "File list.txt" ); // Specify the file name and extension
+            filePath = Path.Combine(listPath, "Filelist.txt" ); // Specify the file name and extension
             if (!File.Exists(filePath))
             {
                 File.Create(filePath).Close();
@@ -125,8 +147,8 @@ namespace Student_Grades_Application
         private void AddToCombo()
         {
             //adding 
-            string folderPath = @"C:\StudentGradesApp\Files"; // Replace with your folder path
-            string outputFile = @"C:\StudentGradesApp\Backup\FileList"; // Replace with your output file path
+            string folderPath = @"C:\StudentGradesApp\Files"; 
+            string outputFile = @"C:\StudentGradesApp\Backup\FileList"; 
 
             string[] files = Directory.GetFiles(folderPath);
 
@@ -148,6 +170,28 @@ namespace Student_Grades_Application
                 combFileList.Items.Add(Path.GetFileName(file));
             }
         }
+        private void enableTextboxes()
+        {
+            StudentNumberTextBox.IsEnabled = true;  
+            StudentNameTextBox.IsEnabled = true;
+            SurnameTextBox.IsEnabled = true;
+            SubjectTextBox.IsEnabled = true;
+            IndivAssignGradeTextBox.IsEnabled = true;
+            GroupAssignGradeTextBox.IsEnabled = true;
+            TestGradeTextBox.IsEnabled = true;
+        }
+        private void disableTextboxes()
+        {
+            StudentNumberTextBox.IsEnabled = false;
+            StudentNameTextBox.IsEnabled = false;
+            SurnameTextBox.IsEnabled = false;
+            SubjectTextBox.IsEnabled = false;
+            IndivAssignGradeTextBox.IsEnabled = false;
+            GroupAssignGradeTextBox.IsEnabled = false;
+            TestGradeTextBox.IsEnabled = false;
+        }
+
+
     }
 }
 
