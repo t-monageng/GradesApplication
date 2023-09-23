@@ -1,0 +1,6 @@
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\Libraries\GivLib\bin\Debug\GivLib.dll
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\Libraries\GivLib\bin\Debug\GivLib.pdb
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\Libraries\GivLib\obj\Debug\GivLib.csproj.AssemblyReference.cache
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\Libraries\GivLib\obj\Debug\GivLib.csproj.CoreCompileInputs.cache
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\Libraries\GivLib\obj\Debug\GivLib.dll
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\Libraries\GivLib\obj\Debug\GivLib.pdb

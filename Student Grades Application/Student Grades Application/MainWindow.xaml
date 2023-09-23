@@ -1,0 +1,46 @@
+﻿<Window x:Class="Student_Grades_Application.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Student_Grades_Application"
+        mc:Ignorable="d"
+        Title="Student Grades Application" Height="419" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/icon_clock.png">
+    <Grid>
+        <DataGrid x:Name="DataGridView" AutoGenerateColumns="False" Margin="334,60,8,15" BorderThickness="0,0,0,0" Background="{x:Null}" CellStyle="{Binding GridLinesVisibility.All, ElementName=moduleDataGrid}" GridLinesVisibility="None" >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Number" Binding="{Binding [0]}" Width ="56" />
+                <DataGridTextColumn Header="Name" Binding="{Binding [1]}" Width ="49" />
+                <DataGridTextColumn Header="Surname" Binding="{Binding [2]}" Width ="60" />
+                <DataGridTextColumn Header="Subject" Binding="{Binding [3]}" Width ="90" />
+                <DataGridTextColumn Header="Ind Assignment" Binding="{Binding [4]}" Width ="110" />
+                <DataGridTextColumn Header="Grp Assignment" Binding="{Binding [5]}" Width ="110" />
+                <DataGridTextColumn Header="Test" Binding="{Binding [6], Mode=OneWay}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtFileName" HorizontalAlignment="Left" Margin="105,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="19" BorderThickness="1,0,0,0" BorderBrush="#FF232323" SelectionBrush="#FF008EFF" />
+        <Label Content="File name" HorizontalAlignment="Left" Margin="31,31,0,0" VerticalAlignment="Top" Height="29" Width="74" HorizontalContentAlignment="Right" FontWeight="Bold" Foreground="#FFFF0101"/>
+        <Label Content="Subject" HorizontalAlignment="Left" Margin="26,139,0,0" VerticalAlignment="Top" Height="29" Width="74" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <Label Content="Student No" HorizontalAlignment="Left" Margin="4,166,0,0" VerticalAlignment="Top" Height="29" Width="96" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="26,190,0,0" VerticalAlignment="Top" Height="29" Width="74" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Margin="26,216,0,0" VerticalAlignment="Top" Height="29" Width="74" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <Label Content="Ind Assignment" HorizontalAlignment="Left" Margin="0,245,0,0" VerticalAlignment="Top" Height="29" Width="100" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <Label Content="Grp Assignment" HorizontalAlignment="Left" Margin="-5,269,0,0" VerticalAlignment="Top" Height="29" Width="105" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <Label Content="Test " HorizontalAlignment="Left" Margin="26,297,0,0" VerticalAlignment="Top" Height="29" Width="74" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <TextBox x:Name="SubjectTextBox" HorizontalAlignment="Left" Height="20" Margin="105,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF232323" SelectionBrush="#FF008EFF"/>
+        <TextBox x:Name="StudentNumberTextBox" HorizontalAlignment="Left" Height="21" Margin="105,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF232323" SelectionBrush="#FF008EFF"/>
+        <TextBox x:Name="StudentNameTextBox" HorizontalAlignment="Left" Height="20" Margin="105,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF232323" SelectionBrush="#FF008EFF"/>
+        <TextBox x:Name="SurnameTextBox" HorizontalAlignment="Left" Height="21" Margin="105,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF232323" SelectionBrush="#FF008EFF"/>
+        <TextBox x:Name="IndivAssignGradeTextBox" HorizontalAlignment="Left" Height="21" Margin="105,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF232323" SelectionBrush="#FF008EFF"/>
+        <TextBox x:Name="GroupAssignGradeTextBox" HorizontalAlignment="Left" Height="21" Margin="105,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF232323" SelectionBrush="#FF008EFF"/>
+        <TextBox x:Name="TestGradeTextBox" HorizontalAlignment="Left" Height="20" Margin="105,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF232323" SelectionBrush="#FF008EFF"/>
+        <Button Content="Add to File" Click="AddToFile_Click" HorizontalAlignment="Left" Height="20" Margin="105,337,0,0" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF121111" Background="#FFE6E6E6" FontWeight="Bold"/>
+        <Button Content="Create File" Click="CreateFile_Click" HorizontalAlignment="Left" Height="20" Margin="105,62,0,0" VerticalAlignment="Top" Width="210" BorderThickness="1,0,0,0" BorderBrush="#FF121111" Background="#FFE6E6E6" FontWeight="Bold" Foreground="Black"/>
+        <Button Content="Display" Click="Display_Click" HorizontalAlignment="Left" Height="20" Margin="332,34,0,0" VerticalAlignment="Top" Width="541" BorderThickness="1,0,0,0" BorderBrush="#FF121111" Background="#FFE6E6E6" FontWeight="Bold"/>
+        <Label Content="Files" HorizontalAlignment="Left" Margin="26,113,0,0" VerticalAlignment="Top" Height="29" Width="74" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <ComboBox x:Name="combFileList" HorizontalAlignment="Left" Margin="105,115,0,0" VerticalAlignment="Top" Width="210" Height="21" BorderThickness="1,0,0,0" BorderBrush="Black" Background="White"/>
+        <Label Content="/" HorizontalAlignment="Left" Margin="192,81,0,0" VerticalAlignment="Top" Height="29" Width="25" HorizontalContentAlignment="Right" FontWeight="Bold" Foreground="#FFFF0101" FontSize="16"/>
+
+    </Grid>
+</Window>

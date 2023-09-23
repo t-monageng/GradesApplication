@@ -1,0 +1,33 @@
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\bin\Debug\Student Grades Application.exe.config
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\bin\Debug\Student Grades Application.exe
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\bin\Debug\Student Grades Application.pdb
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.csproj.AssemblyReference.cache
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\MainWindow.g.cs
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\App.g.cs
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application_MarkupCompile.cache
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application_MarkupCompile.lref
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\MainWindow.baml
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.g.resources
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student_Grades_Application.Properties.Resources.resources
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.csproj.GenerateResource.cache
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.csproj.CoreCompileInputs.cache
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.exe
+C:\Users\temp\Desktop\Deboar\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.pdb
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\bin\Debug\Student Grades Application.exe.config
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\bin\Debug\Student Grades Application.exe
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\bin\Debug\Student Grades Application.pdb
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.csproj.AssemblyReference.cache
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\MainWindow.g.cs
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\App.g.cs
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application_MarkupCompile.cache
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application_MarkupCompile.lref
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\MainWindow.baml
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.g.resources
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student_Grades_Application.Properties.Resources.resources
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.csproj.GenerateResource.cache
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.csproj.CoreCompileInputs.cache
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.exe
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.pdb
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\bin\Debug\GivLib.dll
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\bin\Debug\GivLib.pdb
+C:\Users\temp\Desktop\Projects\Student Grades Application\Student Grades Application\obj\Debug\Student Grades Application.csproj.CopyComplete
