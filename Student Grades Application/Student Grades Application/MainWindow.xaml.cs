@@ -29,13 +29,17 @@ namespace Student_Grades_Application
             try
             {
                 // Creating a new txt file using dedicated textbox
-                if (txtFileName.Text != null | txtFileName.Text != "")
+                if (txtFileName.Text == "")
+                {
+                    MessageBox.Show("Error: File name field is empty, please try again.");
+                }
+                else
                 {
                     Filename = txtFileName.Text;
                     //Filename = enc.EncryptString(txtFileName.Text, "MySecretKey12345");
                     Filename = $"{Filename}.txt";
 
-                     folderPath = @"C:\StudentGradesApp\Files"; // Replace with your desired folder path
+                    folderPath = @"C:\StudentGradesApp\Files"; // Replace with your desired folder path
                     Directory.CreateDirectory(folderPath);
 
 
@@ -108,14 +112,28 @@ namespace Student_Grades_Application
         }
         private void Display_Click(object sender, RoutedEventArgs e)
         {
-            string selectedFile = combFileList.SelectedItem.ToString();
-            // Read the contents of grades.txt using LINQ and display them in the DataGridView
-            List<string[]> data = File.ReadAllLines(@"C:\StudentGradesApp\Files\"+ selectedFile)
-                .Select(line => line.Split(','))
-                .ToList();
+            try
+            {
+                if (combFileList.SelectedIndex != 0)
+                {
+                    string selectedFile = combFileList.SelectedItem.ToString();
+                    // Read the contents of grades.txt using LINQ and display them in the DataGridView
+                    List<string[]> data = File.ReadAllLines(@"C:\StudentGradesApp\Files\" + selectedFile)
+                        .Select(line => line.Split(','))
+                        .ToList();
 
-            // Bind the data to the DataGridView
-            DataGridView.ItemsSource = data;
+                    // Bind the data to the DataGridView
+                    DataGridView.ItemsSource = data;
+                }
+                else
+                {
+                    MessageBox.Show("Error: Please select a file.");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: Please select a file.");
+            }
         }
         private void ClearTextBoxes()
         {
@@ -140,15 +158,8 @@ namespace Student_Grades_Application
                 File.Create(filePath).Close();
             }
 
-
-            AddToCombo();
-
-        }
-        private void AddToCombo()
-        {
-            //adding 
-            string folderPath = @"C:\StudentGradesApp\Files"; 
-            string outputFile = @"C:\StudentGradesApp\Backup\FileList"; 
+            string folderPath = @"C:\StudentGradesApp\Files";
+            string outputFile = @"C:\StudentGradesApp\Backup\FileList.txt";
 
             string[] files = Directory.GetFiles(folderPath);
 
@@ -159,6 +170,15 @@ namespace Student_Grades_Application
                     writer.WriteLine(file);
                 }
             }
+            AddToCombo();
+
+        }
+        private void AddToCombo()
+        {
+            //adding 
+            string folderPath = @"C:\StudentGradesApp\Files"; 
+            string[] files = Directory.GetFiles(folderPath);
+
 
             combFileList.Items.Clear();
 
@@ -191,7 +211,7 @@ namespace Student_Grades_Application
             TestGradeTextBox.IsEnabled = false;
         }
 
-
+        
     }
 }
 

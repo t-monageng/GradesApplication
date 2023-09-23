@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Student Grades Application" Height="419" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/icon_clock.png">
     <Grid>
-        <DataGrid x:Name="DataGridView"  AutoGenerateColumns="False" Margin="334,60,8,15" BorderThickness="0,0,0,0" Background="{x:Null}" CellStyle="{Binding GridLinesVisibility.All, ElementName=moduleDataGrid}" GridLinesVisibility="None" FontStyle="Italic" >
+        <DataGrid x:Name="DataGridView"  AutoGenerateColumns="False" Margin="334,60,8,15" BorderThickness="0,0,0,0" Background="{x:Null}" CellStyle="{Binding GridLinesVisibility.All, ElementName=moduleDataGrid}" GridLinesVisibility="None" FontStyle="Italic" BorderBrush="Black" >
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Number" Binding="{Binding [0]}" Width ="56" />
